@@ -1,11 +1,11 @@
-# 🎓 Exercício Avaliativo 2 - S202
+# Exercício Avaliativo 2 - S202
 
-Este projeto implementa um sistema de gerenciamento de professores, escolas e cidades usando Neo4j como banco de dados.
+Sistema de gerenciamento de professores, escolas e cidades usando Neo4j.
 
-## 🚀 Como Executar
+## Como Executar
 
-### 1. Configuração do Banco de Dados
-Antes de tudo, você precisa configurar o arquivo `Questao1/configuracao.py` com suas credenciais do Neo4j:
+### 1. Configuração do Banco
+Primeiro, configure o arquivo `Questao1/configuracao.py` com suas credenciais do Neo4j:
 
 ```python
 DB_URL = "bolt://localhost:7687"  # URL do seu banco Neo4j
@@ -13,8 +13,8 @@ DB_USER = "neo4j"                 # Seu usuário
 DB_PASSWORD = "sua_senha"         # Sua senha
 ```
 
-### 2. Iniciar o Neo4j
-Execute o Neo4j usando Docker:
+### 2. Neo4j
+Rode o Neo4j via Docker:
 ```bash
 docker run \
     --name neo4j \
@@ -24,67 +24,66 @@ docker run \
     neo4j:latest
 ```
 
-### 3. Instalar Dependências
+### 3. Dependências
 ```bash
 pip install neo4j
 ```
 
-### 4. Executar o Projeto
+### 4. Rodar
 ```bash
 python Questao1/main.py
 ```
 
-## 📋 Funcionalidades
+## O que tem aqui?
 
 ### Questão 1
-- Consulta de professor específico
-- Listagem de professores com nome iniciado por 'M'
-- Listagem de cidades
-- Consulta de escolas por número
+- Busca de professor específico
+- Professores com nome começando em 'M'
+- Lista de cidades
+- Escolas por número
 
 ### Questão 2
-- Cálculo de idade mais jovem e mais velha
+- Idade mais jovem e mais velha
 - Média de população das cidades
-- Consulta de cidade por CEP
-- Listagem da terceira letra dos professores
+- Cidade por CEP
+- Terceira letra dos professores
 
 ### Questão 3
-- CRUD completo de professores
-- Interface CLI interativa
-- Validações de operações
+- CRUD de professores
+- CLI interativa
+- Validações
 - Tratamento de erros
 
-## 🛠️ Estrutura do Projeto
+## Estrutura
 
 ```
 Questao1/
-├── main.py           # Arquivo principal
-├── configuracao.py   # Configurações do banco
-├── database.py       # Classe de conexão com o banco
-├── query.py         # Consultas da Questão 1 e 2
-├── setup.py         # Inicialização do banco
-├── teacher_crud.py  # CRUD de professores
-└── teacher_cli.py   # Interface CLI
+├── main.py           # Principal
+├── configuracao.py   # Config do banco
+├── database.py       # Conexão
+├── query.py         # Queries Q1 e Q2
+├── setup.py         # Setup do banco
+├── teacher_crud.py  # CRUD
+└── teacher_cli.py   # CLI
 ```
 
-## 🔍 Comandos do CLI
+## Comandos do CLI
 
-- `create`: Criar novo professor
-- `read`: Consultar professor
+- `create`: Novo professor
+- `read`: Buscar professor
 - `update`: Atualizar CPF
 - `delete`: Remover professor
-- `quit`: Sair do programa
+- `quit`: Sair
 
-## ⚠️ Observações
+## Dicas
 
-- Certifique-se de que o Neo4j está rodando antes de executar o programa
-- O banco é limpo e reinicializado a cada execução do programa
-- Todas as operações CRUD são validadas antes de serem executadas
+- Neo4j precisa estar rodando
+- Banco é resetado a cada execução
+- Operações CRUD são validadas
 
-## 🐛 Troubleshooting
+## Se der problema
 
-Se encontrar problemas:
-1. Verifique se o Neo4j está rodando
-2. Confirme se as credenciais em `configuracao.py` estão corretas
-3. Verifique se a porta 7687 está disponível
-4. Certifique-se de que todas as dependências estão instaladas 
+1. Neo4j rodando?
+2. Credenciais corretas?
+3. Porta 7687 livre?
+4. Dependências instaladas?
